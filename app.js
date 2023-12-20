@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express()
 app.use(cors())
 
-const PORT = 2000
+const PORT = process.env.PORT || 2000
 app.use(express.json())
 
 app.post("/api/v1/generatePass",authenticate,generatePass);
