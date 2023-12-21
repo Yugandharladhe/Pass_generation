@@ -102,7 +102,10 @@ const downloadPass=(req,res)=>{
     const{id}=req.query
     if(String(id).includes("SV") || String(id).includes("IV") || String(id).includes("WP") || String(id).includes("OT"))
     {
-        return res.download(`${id}.pdf`);
+        var data =fs.readFileSync(`${id}.pdf`);
+        res.contentType("application/pdf");
+        res.send(data); 
+        // return res.download(`${id}.pdf`);
     }
     else{
         return res.status(400).json({message:"invalid id"})
