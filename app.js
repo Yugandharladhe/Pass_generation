@@ -12,7 +12,7 @@ app.use(express.json())
 
 app.post("/api/v1/generatePass",authenticate,generatePass);
 
-app.get("/api/v1/download",authenticate,downloadPass);
+app.get("/api/v1/download",downloadPass);
 
 
 
