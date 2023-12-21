@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const generatePass = async(req, res) => {
 
-    const{regId,fullName,college,company,identity}=req.body
+    const{regId,fullName,college,identity}=req.body
     try {
 
         // Create a document
@@ -34,7 +34,7 @@ const generatePass = async(req, res) => {
     
             doc.fontSize(18).fillColor("#FFFFFF").text("RegNo : "+regId,100,305)
             doc.fontSize(18).fillColor("#FFFFFF").text("Name : "+fullName,100,359)
-            doc.fontSize(18).fillColor("#FFFFFF").text("College : "+college,100,410)
+            doc.fontSize(18).fillColor("#FFFFFF").text("College : "+identity,100,410)
     
             // Finalize PDF file
             doc.end();
@@ -57,7 +57,7 @@ const generatePass = async(req, res) => {
     
             doc.fontSize(18).fillColor("#FFFFFF").text("RegNo : "+regId,100,305)
             doc.fontSize(18).fillColor("#FFFFFF").text("Name : "+fullName,100,359)
-            doc.fontSize(18).fillColor("#FFFFFF").text("Company : "+company,100,410)
+            doc.fontSize(18).fillColor("#FFFFFF").text("Company : "+identity,100,410)
     
             // Finalize PDF file
             doc.end();
