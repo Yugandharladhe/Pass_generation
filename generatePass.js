@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const generatePass = async(req, res) => {
 
-    const{regId,fullName,college,identity}=req.body
+    const{regId,fullName,identity}=req.body
     try {
 
         // Create a document
@@ -16,7 +16,7 @@ const generatePass = async(req, res) => {
 
         if(String(regId).includes("SV"))
         {
-            if(college==undefined)
+            if(identity==undefined)
             {
                return res.status(400).json({message:"college should not be empty"})
             }
@@ -41,7 +41,7 @@ const generatePass = async(req, res) => {
         }else if(String(regId).includes("IV") || String(regId).includes("WP"))
         {
 
-            if(company==undefined)
+            if(identity==undefined)
             {
                 return res.status(400).json({message:"company should not be empty"})
             }
