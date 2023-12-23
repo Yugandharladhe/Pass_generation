@@ -25,16 +25,16 @@ const generatePass = async(req, res) => {
             doc.image("visitor.jpg", {
                 fit: [500, 470],
                 // align: 'center',
-                valign: 'center',
+                valign: 'center'
                 // width:300,
                 // height:100
             });
     
-            
+            // [500, 470]
     
-            doc.fontSize(18).fillColor("#FFFFFF").text("RegNo : "+regId,100,305)
-            doc.fontSize(18).fillColor("#FFFFFF").text("Name : "+fullName,100,359)
-            doc.fontSize(18).fillColor("#FFFFFF").text("College : "+identity,100,410)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf",14).text(regId,200,295)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(fullName,165,415)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
     
             // Finalize PDF file
             doc.end();
@@ -55,9 +55,9 @@ const generatePass = async(req, res) => {
                 // height:100
             });
     
-            doc.fontSize(18).fillColor("#FFFFFF").text("RegNo : "+regId,100,305)
-            doc.fontSize(18).fillColor("#FFFFFF").text("Name : "+fullName,100,359)
-            doc.fontSize(18).fillColor("#FFFFFF").text("Company : "+identity,100,410)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf",14).text(regId,200,295)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(fullName,165,415)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
     
             // Finalize PDF file
             doc.end();
@@ -78,9 +78,9 @@ const generatePass = async(req, res) => {
                 // height:100
             });
     
-            doc.fontSize(18).fillColor("#FFFFFF").text("RegNo : "+regId,100,305)
-            doc.fontSize(18).fillColor("#FFFFFF").text("Name : "+fullName,100,359)
-            doc.fontSize(18).fillColor("#FFFFFF").text("Other : "+identity,100,410)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf",14).text(regId,200,295)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(fullName,165,415)
+            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
     
             // Finalize PDF file
             doc.end();
@@ -102,6 +102,7 @@ const downloadPass=(req,res)=>{
     const{id}=req.query
     if(String(id).includes("SV") || String(id).includes("IV") || String(id).includes("WP") || String(id).includes("OT"))
     {
+        // if(true){}
         var data =fs.readFileSync(`${id}.pdf`)
         res.contentType("application/pdf");
         res.send(data); 
