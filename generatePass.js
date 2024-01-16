@@ -102,7 +102,7 @@ const downloadPass=(req,res)=>{
     const{id}=req.query
     if(String(id).includes("SV") || String(id).includes("IV") || String(id).includes("WP") || String(id).includes("OT"))
     {
-        // if(true){}
+        // if(true){}//
         var data =fs.readFileSync(`${id}.pdf`)
         res.contentType("application/pdf");
         res.send(data); 
