@@ -30,11 +30,16 @@ const generatePass = async(req, res) => {
                 // height:100
             });
     
+            let font=18
             // [500, 470]
+            if(identity.length>36)
+            {
+                font=12
+            }
     
             doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf",14).text(regId,200,295)
             doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(fullName,165,415)
-            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
+            doc.fontSize(font).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
     
             // Finalize PDF file
             doc.end();
@@ -55,9 +60,16 @@ const generatePass = async(req, res) => {
                 // height:100
             });
     
+            let font=18
+            // [500, 470]
+            if(identity.length>36)
+            {
+                font=12
+            }
+
             doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf",14).text(regId,200,295)
             doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(fullName,165,415)
-            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
+            doc.fontSize(font).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
     
             // Finalize PDF file
             doc.end();
@@ -78,9 +90,17 @@ const generatePass = async(req, res) => {
                 // height:100
             });
     
+
+            let font=18
+            // [500, 470]
+            if(identity.length>36)
+            {
+                font=12
+            }
+
             doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf",14).text(regId,200,295)
             doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(fullName,165,415)
-            doc.fontSize(18).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
+            doc.fontSize(font).fillColor("#264b96").font("SansSerif.ttf").text(identity,165,460)
     
             // Finalize PDF file
             doc.end();
