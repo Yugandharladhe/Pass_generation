@@ -30,7 +30,7 @@ const generatePass = async(req, res) => {
                 // height:100
             });
     
-            let font=18
+            let font=16
             // [500, 470]
             if(identity.length>36)
             {
@@ -60,7 +60,7 @@ const generatePass = async(req, res) => {
                 // height:100
             });
     
-            let font=18
+            let font=16
             // [500, 470]
             if(identity.length>36)
             {
@@ -91,7 +91,7 @@ const generatePass = async(req, res) => {
             });
     
 
-            let font=18
+            let font=16
             // [500, 470]
             if(identity.length>36)
             {
